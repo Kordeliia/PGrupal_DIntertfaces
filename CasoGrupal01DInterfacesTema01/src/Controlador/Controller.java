@@ -18,6 +18,7 @@ import javafx.scene.shape.*;
 import javafx.scene.transform.*;
 import javafx.stage.Stage;
 
+@SuppressWarnings("unused")
 public class Controller {
 
     @FXML
@@ -29,13 +30,20 @@ public class Controller {
     double orgSceneX, orgSceneY;
     double orgTranslateX, orgTranslateY;
     @FXML
-    private Button btnRotate1;
+    private Button btnRotate1, btn2R;
+    @FXML
+    private Polygon trianid;
+    
 
     public void initialize() {
         elipse1.setOnMousePressed(elipsOnMousePressedEventHandler);
         elipse1.setOnMouseDragged(elipsOnMouseDraggedEventHandler);
         btnRotate1.setOnMouseClicked(a -> {
         	linea1.setRotate(linea1.getRotate() + 15);
+        });
+
+        btn2R.setOnMouseClicked(a -> {
+        	trianid.setRotate(trianid.getRotate() + 15);
         });
         
            }
@@ -66,5 +74,6 @@ public class Controller {
                     ((Ellipse)(t.getSource())).setTranslateY(newTranslateY);
 
                 }
-            };
+           
+                    };
 }
